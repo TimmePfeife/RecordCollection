@@ -33,7 +33,7 @@ describe('testing artist model', () => {
 
     it('missing all required fields', async () => {
       try {
-        const artist = new Artist();
+        const artist = new Artist({});
 
         await artist.save();
       } catch (err) {

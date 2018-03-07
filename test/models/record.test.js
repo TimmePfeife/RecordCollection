@@ -69,15 +69,17 @@ describe('testing record model', () => {
     it('invalid type', async () => {
       try {
         const record = new Record({
-          title: 'No Type',
-          artist: 'Invalid Type',
+          title: {},
+          artist: {},
           type: 'NOTYPE',
         });
 
 
         await record.save();
       } catch (err) {
-        expect(err.message).to.include('is not a valid enum value for path `type`');
+        expect(err.errors['title'].message).to.include('Cast to String failed');
+        expect(err.errors['artist'].message).to.include('Cast to String failed');
+        expect(err.errors['type'].message).to.include('is not a valid enum value for path `type`');
       }
     });
   });
