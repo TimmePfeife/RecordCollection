@@ -44,6 +44,7 @@ const RecordSchema = new Schema({
         type: String,
         required: true,
       },
+      // TODO: Dauer
       heading: {
         type: String,
       },

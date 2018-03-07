@@ -103,6 +103,7 @@ ArtistSchema.statics.updateArtist = async function (artistId, artistData = {}) {
       }
       data.cover_src = ret.path;
     }
+
     const artist = await this.findByIdAndUpdate(artistId, { $set: data }, { runValidators: true, new: true });
 
     const artistListData = {
