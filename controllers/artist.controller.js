@@ -13,7 +13,7 @@ async function post(postData) {
   return Artist.createArtist(postData);
 }
 
-async function put(id, putData) {
+async function patch(id, putData) {
   return Artist.updateArtist(id, putData);
 }
 
@@ -25,6 +25,6 @@ module.exports = {
   index,
   get,
   post,
-  put,
+  patch,
   del,
 };

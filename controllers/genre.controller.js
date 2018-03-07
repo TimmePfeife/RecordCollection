@@ -13,7 +13,7 @@ async function post(postData) {
   return Genre.createGenre(postData);
 }
 
-async function put(id, putData) {
+async function patch(id, putData) {
   return Genre.updateGenre(id, putData);
 }
 
@@ -25,6 +25,6 @@ module.exports = {
   index,
   get,
   post,
-  put,
+  patch,
   del,
 };
